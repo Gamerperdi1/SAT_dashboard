@@ -2,6 +2,9 @@ const total = 472;
 function actualizarGrafico(circleID, numberID, valor){
     const circle = document.getElementById(circleID);
     const number = document.getElementById(numberID);
+     if(!circle || !number){
+        console.error("No se encontró el elemento:", circleID, numberID);
+        return;}
     if(valor<0) valor=0;
     if(valor>100) valor=100;
     number.innerHTML = valor + "%";
