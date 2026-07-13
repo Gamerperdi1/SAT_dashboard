@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Progreso circular MIT App Inventor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<span id="contenido"></span>
+    <div class="skill">
+    <div class="outer">
+        <div class="inner">
+            <div id="numberHumedad">
+                0%
+            </div>
+        </div>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="160"
+            height="160">
+            <circle
+                id="circleHumedad"
+                cx="80"
+                cy="80"
+                r="70"
+                stroke-linecap="round"/>
+        </svg>
+    </div>
+</div>
+<script>
+document.getElementById("contenido").innerHTML = window.AppInventor.getWebViewString();
+const total = 472;
+
+function actualizarGrafico(circleID, numberID, valor){
+    const circle = document.getElementById(circleID);
+    const number = document.getElementById(numberID);
+    if(valor<0) valor=0;
+    if(valor>100) valor=100;
+    number.innerHTML = valor + "%";
+    let offset = total - (valor/100)*total;
+    circle.style.strokeDashoffset = offset;
+    if(valor<30){
+        circle.style.stroke="#2ecc71";
+    }
+    else if(valor<60){
+        circle.style.stroke="#f1c40f";
+    }
+    else if(valor<80){
+        circle.style.stroke="#e67e22";
+    }
+    else{
+        circle.style.stroke="#e74c3c";
+    }
+}
+actualizarGrafico(
+    "circleHumedad",
+    "numberHumedad",
+    40
+);
+</script>
+</body>
+</html>
