@@ -26,5 +26,5 @@ function actualizarGrafico(circleID, numberID, valor){
 actualizarGrafico(
     "circleHumedad",
     "numberHumedad",
-    100
+    50
 );
