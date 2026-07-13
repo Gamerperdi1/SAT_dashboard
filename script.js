@@ -2,9 +2,12 @@ const total = 472;
 function actualizarGrafico(circleID, numberID, valor){
     const circle = document.getElementById(circleID);
     const number = document.getElementById(numberID);
-     if(!circle || !number){
+    
+    if(!circle || !number){
         console.error("No se encontró el elemento:", circleID, numberID);
         return;}
+    valor = numbervalor(valor);
+    if(isNaN(valor)) valor=0;
     if(valor<0) valor=0;
     if(valor>100) valor=100;
     number.innerHTML = valor + "%";
@@ -26,4 +29,5 @@ function actualizarGrafico(circleID, numberID, valor){
 actualizarGrafico(
     "circleHumedad",
     "numberHumedad",
+    0
 );
