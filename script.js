@@ -26,8 +26,6 @@ function actualizarGrafico(circleID, numberID, valor){
         circle.style.stroke="#e74c3c";
     }
 }
-actualizarGrafico(
-    "circleHumedad",
-    "numberHumedad",
-    0
-);
+document.addEventListener("DOMContentLoaded", () => {
+    actualizarGrafico("circleHumedad","numberHumedad",0);
+});
