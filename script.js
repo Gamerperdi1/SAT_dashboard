@@ -6,7 +6,7 @@ function actualizarGrafico(circleID, numberID, valor){
     if(!circle || !number){
         console.error("No se encontró el elemento:", circleID, numberID);
         return;}
-    valor = numbervalor(valor);
+    valor = Number(valor);
     if(isNaN(valor)) valor=0;
     if(valor<0) valor=0;
     if(valor>100) valor=100;
