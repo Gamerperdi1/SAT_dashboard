@@ -37,4 +37,4 @@ function actualizarGrafico(valor){
         circle.style.stroke="#e74c3c";
     }
 }
-actualizarGrafico(50);
+actualizarGrafico(0);
