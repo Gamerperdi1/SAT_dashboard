@@ -1,6 +1,11 @@
-const total = 472;
+%Configuracion del sensor%
+const unidad = "%"; %humedad%
+const unidad = "cm"; %Nivel de agua
+const unidad = "mm/h"; % Pluviometro
+const unidad = "°"; %Inclinacion
 function actualizarGrafico(circleID, numberID, valor){
-    const circle = document.getElementById(circleID);
+
+const circle = document.getElementById(circleID);
     const number = document.getElementById(numberID);
     
     if(!circle || !number){
@@ -10,7 +15,7 @@ function actualizarGrafico(circleID, numberID, valor){
     if(isNaN(valor)) valor=0;
     if(valor<0) valor=0;
     if(valor>100) valor=100;
-    number.innerHTML = valor + "%";
+    number.innerHTML = valor +" "+ unidad;
     let offset = total - (valor/100)*total;
     circle.style.strokeDashoffset = offset;
     if(valor<30){
