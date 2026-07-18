@@ -2,7 +2,7 @@
 const sensor = {
     nombre : "Inclinacion del suelo",
     unidad : "°",
-    max : 20 //valor a modificar
+    max : 5  //valor a modificar
 };
 document.getElementById("tituloSensor").innerHTML = sensor.nombre;
 const total = 472;
