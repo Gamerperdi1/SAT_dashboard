@@ -2,7 +2,7 @@
 const sensor = {
     nombre : "Humedad del suelo",
     unidad : "%",
-    max : 100 //valor a modificar
+    max : 50 //valor a modificar
 };
 document.getElementById("tituloSensor").innerHTML = sensor.nombre;
 const total = 472;
