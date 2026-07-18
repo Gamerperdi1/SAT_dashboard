@@ -2,7 +2,7 @@
 const sensor = {
     nombre : "Nivel del rio",
     unidad : "cm",
-    max : 100 //valor a modificar
+    max : 40 //valor a modificar
 };
 document.getElementById("tituloSensor").innerHTML = sensor.nombre;
 const total = 472;
