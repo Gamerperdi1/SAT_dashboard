@@ -1,18 +1,27 @@
-fetch("http://10.247.219.68:5000/datos")
-.then(response => response.json())
-.then(datos => {
+function leerDatos(){
 
-    console.log("Datos recibidos:");
-    console.log(datos);
+    fetch("http://10.247.219.68:5000/datos")
+    .then(response => response.json())
+    .then(datos => {
 
-    // Tomar el valor de humedad del JSON
-    actualizarGrafico(datos.humedad);
+        console.log("Datos recibidos:", datos);
 
-})
-.catch(error => {
-    console.error("Error al conectar con Flask:", error);
-});
+        actualizarGrafico(datos.humedad);
 
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+
+}
+
+
+// leer inmediatamente al abrir
+leerDatos();
+
+
+// actualizar cada segundo
+setInterval(leerDatos,1000);
 
 // configuración del sensor
 const sensor = {
