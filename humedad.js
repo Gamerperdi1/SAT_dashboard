@@ -1,3 +1,11 @@
+fetch("http://10.247.219.68:5000/datos")
+.then(response => response.json())
+.then(datos => {
+
+    console.log("Datos recibidos:");
+    console.log(datos);
+
+});
 //configuracion del sensor//
 const sensor = {
     nombre : "Humedad del suelo",
