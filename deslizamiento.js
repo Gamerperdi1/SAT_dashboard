@@ -4,7 +4,7 @@
 
 const sensor = {
     nombre : "Deslizamiento del terreno",
-    unidad : " pulsos",
+    unidad : " mm",
     max : 20
 };
 
